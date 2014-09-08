@@ -1,0 +1,9 @@
+---- About ----
+
+nimrod-ff-bookmarks is a Nimrod module for working with Firefox bookmarks files. It can read and parse bookmarks files, in addition to converting to CSV and HTML. It can also filter duplicate bookmarks.
+
+See the documentation.html file for usage and more info.
+
+---- License ----
+
+nimrod-ff-bookmarks is released under the MIT open source license.
