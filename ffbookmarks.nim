@@ -1,4 +1,4 @@
-# Nimrod module for working with Firefox bookmarks files.
+# Nim module for working with Firefox bookmarks files.
 
 # Written by Adam Chesak.
 # Released under the MIT open source license.
@@ -21,7 +21,7 @@ type
 proc parseBookmarks*(data : string): FFBookmark = 
     ## Parses the bookmarks from the specified string.
     
-    var b : PJsonNode = parseJson(data)
+    var b : JsonNode = parseJson(data)
     var ff : FFBookmark
     ff.id = int(b["id"].num)
     ff.guid = b["guid"].str
@@ -32,7 +32,7 @@ proc parseBookmarks*(data : string): FFBookmark =
     ff.ffType = b["type"].str
     ff.root = b["root"].str
     
-    var ffc : PJsonNode = b["children"]
+    var ffc : JsonNode = b["children"]
     var ffcs : seq[FFBookmark] = newSeq[FFBookmark](len(ffc))
     for i in 0..len(ffc)-1:
         
@@ -54,7 +54,7 @@ proc parseBookmarks*(data : string): FFBookmark =
             ffn.annos = ffa
         
         if ffc[i].hasKey("children"):
-            var ffnc : PJsonNode = ffc[i]["children"]
+            var ffnc : JsonNode = ffc[i]["children"]
             var ffncs : seq[FFBookmark] = newSeq[FFBookmark](len(ffnc))
             
             for j in 0..len(ffnc)-1:
