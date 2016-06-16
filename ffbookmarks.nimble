@@ -2,7 +2,7 @@
 name = "ffbookmarks"
 version = "0.1"
 author = "Adam Chesak"
-description = "Nimrod module for working with Firefox bookmarks"
+description = "Nim module for working with Firefox bookmarks"
 license = "MIT"
 
 [Deps]

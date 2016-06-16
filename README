@@ -1,9 +1,0 @@
----- About ----
-
-nim-ffbookmarks is a Nim module for working with Firefox bookmarks files. It can read and parse bookmarks files, in addition to converting to CSV and HTML. It can also filter duplicate bookmarks.
-
-See the documentation.html file for usage and more info.
-
----- License ----
-
-nim-ffbookmarks is released under the MIT open source license.
