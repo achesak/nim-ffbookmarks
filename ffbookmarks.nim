@@ -34,11 +34,26 @@ import csv
 
 
 type
-    FFBookmark* = tuple[id : int, guid : string, title : string, index : int, dateAdded : TTime, lastModified : TTime,
-                         ffType : string, root : string, annos : FFAnnos, children : seq[FFBookmark], uri : string,
-                         charset : string, iconuri : string]
+    FFBookmark* = ref object
+        id* : int
+        guid* : string
+        title* : string
+        index* : int
+        dateAdded* : Time
+        lastModified* : Time
+        ffType* : string
+        root* : string
+        annos* : FFAnnos
+        children* : seq[FFBookmark]
+        uri* : string
+        charset* : string
+        iconuri* : string
     
-    FFAnnos* = tuple[name : string, flags : int, expires : int, value : string]
+    FFAnnos* = ref object
+        name* : string
+        flags* : int
+        expires* : int
+        value* : string
 
 
 proc parseBookmarks*(data : string): FFBookmark = 
